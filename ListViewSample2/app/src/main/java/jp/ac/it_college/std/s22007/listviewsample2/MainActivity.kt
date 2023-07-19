@@ -2,6 +2,8 @@ package jp.ac.it_college.std.s22007.listviewsample2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import jp.ac.it_college.std.s22007.listviewsample2.databinding.ActivityMainBinding
 
@@ -34,5 +36,13 @@ class MainActivity : AppCompatActivity() {
             )
             val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, menuList)
             binding.lvMenu.adapter = adapter
+            binding.lvMenu.onItemClickListener = ListItemClickListener()
+    }
+
+    private inner class ListItemClickListener : AdapterView.OnItemClickListener {
+        override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            val dialogFragment = OrderConfirmDialogFragment()
+            dialogFragment.show(supportFragmentManager, "OrderConfirmDialogFragment")
+        }
     }
 }
