@@ -19,7 +19,9 @@ class MainActivity : AppCompatActivity() {
             adapter = MenuListAdapter(menuList){ name, price ->
                 /* アイテムを選択されたときの処理はここに書くことができる */
                 //インテントオブジェクトの作成
-                val intent2MenuThanks = Intent(this@MainActivity, MenuThanksActivity::class.java
+                val intent2MenuThanks = Intent(
+                    this@MainActivity,
+                    MenuThanksActivity::class.java
                 )
                 //次の画面に送るデータをセットする
                 intent2MenuThanks.putExtra("menuName", name)
