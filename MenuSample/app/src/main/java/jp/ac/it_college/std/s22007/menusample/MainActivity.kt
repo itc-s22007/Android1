@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
         return result
     }
-    private fun resetMenu(list: List): Boolean{
+    private fun resetMenu(list: List<jp.ac.it_college.std.s22007.menusample.Menu>): Boolean{
         menuList.clear()
         menuList.addAll(list)
         binding.lvMenu.adapter?.notifyDataSetChanged()
